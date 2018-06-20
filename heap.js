@@ -94,19 +94,32 @@ class Heap{
         this.size = this.size + 1;
         this.percolateUp(this.size);
     }
+    buildHeap(array){
+        let index = Math.floor(array.length / 2);
+        this.size = array.length;
+        this.heapList = [0, ...array];
+        while(index > 0){
+            this.percolateDown(index);
+            index--;
+        }
+        console.log(this.heapList);
+    }
 }
 
 let heap_1 = new Heap();
-heap_1.insert(31);
-heap_1.insert(10);
-heap_1.insert(16);
-heap_1.insert(9);
-heap_1.insert(8);
-heap_1.insert(14);
-heap_1.insert(12);
-heap_1.insert(3);
-heap_1.insert(1);
-heap_1.insert(5);
-heap_1.insert(7);
-heap_1.insert(19);
-heap_1.deleteMax();
+// heap_1.insert(31);
+// heap_1.insert(10);
+// heap_1.insert(16);
+// heap_1.insert(9);
+// heap_1.insert(8);
+// heap_1.insert(14);
+// heap_1.insert(12);
+// heap_1.insert(3);
+// heap_1.insert(1);
+// heap_1.insert(5);
+// heap_1.insert(7);
+// heap_1.insert(19);
+// heap_1.deleteMax();
+
+heap_1.buildHeap([1,5,14,2,10,21,18,3,11,8,7,12]);
+
